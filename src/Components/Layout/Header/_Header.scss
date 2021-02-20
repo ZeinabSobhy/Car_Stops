@@ -1,6 +1,7 @@
 @import "../../../Containers/App/_mixinis.scss";
 @import "../../../Containers/App/_variables.scss";
 header {
+
   position: relative;
   z-index: 1;
   width: 100%;
@@ -12,9 +13,10 @@ header {
 }
 .header{
   &_container {
+    display: flex;
+    flex-direction:row;
     padding:0;
     margin: 0 auto;
-    display:flex;
     justify-content:space-between;
     text-align:center;
 

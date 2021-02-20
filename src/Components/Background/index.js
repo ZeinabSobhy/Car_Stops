@@ -9,12 +9,11 @@ const Background = props => {
                     <div className="background_img_txt">
                         <h3><FormattedMessage id="background.title"/></h3>
                         <h5><FormattedMessage id="background.subtitle" /></h5>
+                            <button> <FormattedMessage id="background.btn" /> <ArrowDownwardIcon className="background_img_ico"/> </button>
                     </div>
 
               </div>
-            <div className="background__startToday">
-                   <button> <FormattedMessage id="background.btn" /> <ArrowDownwardIcon className="background__startToday_ico"/> </button>
-            </div>
+
         </section>
     )
 }

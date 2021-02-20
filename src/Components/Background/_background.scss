@@ -2,17 +2,45 @@
 @import "../../Containers/App/_variables.scss";
 
 .background {
+  width:100%;
   margin-top: 2.2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  @include breakpoint-down(small){
+    width: 100%;
+    min-width: 29.9375em;
+  }
+
 
   &_img{
     &_txt{
       margin: -12rem;
-      justify-content: center;
+      display: flex;
+      flex-direction:column;
+      justify-content: flex-end;
       align-items: center;
       align-content: center;
       text-align: center;
+      button{
+        &_ico{
+          font-size:small;
+        }
+        position: absolute;
+        bottom: 0;
+        right: 45%;
+        width: 9.188rem;
+        height: 3rem;
+        box-shadow:0 16px 40px rgba(0,0,0,0.12);border:0;;
+        border-radius: 5px;
+        background-color: #ec1c24;
+        color: #ffffff;
+        @include breakpoint-down(small){
+          bottom: 9.438rem;
+          right: 10%;
+        }
+
+      }
+
       @include breakpoint-down(small){
         margin: -8rem;
       }
@@ -36,7 +64,7 @@
 
       }
     }
-    align-items: flex-end;
+    align-items:flex-end;
     width: 100%;
     height: 79vh;
     padding: 18.75rem 1.4rem ;
@@ -51,32 +79,14 @@
       background-image: url(../../assets/backgrounds/header-bg@2x.png);
     }
     @include breakpoint-down(small){
-      padding: 11.75rem 13.4rem ;
+      padding: 10.75rem 11.4rem ;
       height: 58vh;
     }
+
   }
-&__startToday{
-  justify-content: center;
-  position: absolute;
-  right:    43.75rem;
-  bottom:   0;
-  z-index: 1;
-  button{
-    width: 9.188rem;
-    height: 3rem;
-    box-shadow:0 16px 40px rgba(0,0,0,0.12);border:0;;
-    border-radius: 5px;
-    background-color: #ec1c24;
-    color: #ffffff;
-  }
-  @include breakpoint-down(small){
-    right: 6.9rem;
-    bottom: 9.938rem;
-  }
-&_ico{
-  font-size:small;
-}
-}
+
+
+
 }
 
 
