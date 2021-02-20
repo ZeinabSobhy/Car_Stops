@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './Containers/App/App';
 import reportWebVitals from './reportWebVitals';
+import {EmployeeProvider} from "./context/employeeContext";
+import {LocalizationProvider} from "./context/LocalizationContext";
+import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <LocalizationProvider>
+              <EmployeeProvider>
+
+                  <App />
+              </EmployeeProvider>
+          </LocalizationProvider>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

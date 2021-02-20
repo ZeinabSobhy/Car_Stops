@@ -1,0 +1,17 @@
+@import "./_variables.scss";
+@import './_mixinis.scss';
+@import "../Home/_Home.scss";
+@import "../../Components/Layout/Header/_Header.scss";
+@import "../../Components/Background/_background.scss";
+
+
+.car-container{
+  width: 100%;
+  height: 591vh;
+  margin: 0 auto;
+  padding: 0;
+  @include breakpoint-down(small){
+    height: 850vh;
+  }
+
+}

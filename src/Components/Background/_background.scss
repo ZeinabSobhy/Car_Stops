@@ -1,0 +1,62 @@
+@import "../../Containers/App/_mixinis.scss";
+@import "../../Containers/App/_variables.scss";
+
+.background {
+
+  margin-top: 2.2rem;
+  display: flex;
+  justify-content: center;
+
+  &_img{
+    &_txt{
+      margin: -12rem;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+      @include breakpoint-down(small){
+        margin: -8rem;
+      }
+      h3 {
+        @extend .txt;
+
+        color: #ffffff;
+        font-size: $font-xlg;
+        white-space:nowrap;
+        @include breakpoint-down(small){
+          font-size: 1.7rem;
+        }
+      }
+      h5{
+        @extend .txt;
+        font-size: 2rem;
+        white-space: nowrap;
+        @include breakpoint-down(small){
+          font-size: $font-lg;
+        }
+
+      }
+    }
+    align-items: flex-end;
+    width: 100%;
+    height: 79vh;
+    padding: 18.75rem 1.4rem ;
+    object-fit: contain;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    background-image: url(../../assets/backgrounds/header-bg.png);
+    @include breakpoint-up(large){
+      background-image: url(../../assets/backgrounds/header-bg@2x.png);
+    }
+    @include breakpoint-down(small){
+      padding: 11.75rem 13.4rem ;
+      height: 58vh;
+    }
+  }
+
+}
+
+
