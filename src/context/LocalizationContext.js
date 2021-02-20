@@ -11,9 +11,11 @@ const LocalizationProvider = ({ children }) => {
 	const switchLocale = (key) => {
 		if (key === 'en') {
 			document.body.style.direction = 'ltr';
+			document.body.style.fontFamily = '"Roboto" sans-serif';
 			setLocale(enLocale);
 		} else {
-			document.body.style.direction = 'rtl';
+			document.body.style.direction = 'rtl'
+			document.body.style.fontFamily = '"Almarai" sans-serif';
 			setLocale(arLocale);
 		}
 	};

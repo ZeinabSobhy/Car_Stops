@@ -30,10 +30,11 @@ header {
     margin: 3.375rem 7.375rem;
     text-align: -webkit-center;
     line-height: 65px;
+    box-shadow:0 16px 40px rgba(0,0,0,0.12);border:0;;
     @include breakpoint-down(small){
       width: 4.8125rem;
       height: 2.25rem;
-      margin: 3.5rem 1.9rem;
+      margin:3.9rem 4.9rem;
     }
     &:hover{
       background-color: $btn_background;
@@ -55,7 +56,7 @@ header {
       @include breakpoint-down(small){
         width: 9.8125rem;
         height: 8.375rem;
-        margin: 0.5rem 0.9rem;
+        margin: 0.5rem 1.9rem;;
       }
     }
 
