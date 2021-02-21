@@ -2,10 +2,9 @@
 @import "../../Containers/App/_variables.scss";
 
 .background {
+  display: flex;
   width:100%;
   margin-top: 2.2rem;
-  display: flex;
-  flex-direction: column;
   @include breakpoint-down(small){
     width: 100%;
     min-width: 29.9375em;
@@ -14,39 +13,37 @@
 
   &_img{
     &_txt{
-      margin: -12rem;
       display: flex;
-      flex-direction:column;
+      flex-direction: column;
       justify-content: flex-end;
-      align-items: center;
-      align-content: center;
       text-align: center;
+      margin-block-start: 9rem;
+
       button{
+        margin-block-start: 2rem;
+        order: 3;
+        align-self: center;
+        z-index: 1;
         &_ico{
           font-size:small;
         }
-        position: absolute;
-        bottom: 0;
-        right: 45%;
         width: 9.188rem;
         height: 3rem;
         box-shadow:0 16px 40px rgba(0,0,0,0.12);border:0;;
         border-radius: 5px;
         background-color: #ec1c24;
         color: #ffffff;
-        @include breakpoint-down(small){
-          bottom: 9.438rem;
-          right: 10%;
-        }
-
       }
 
       @include breakpoint-down(small){
-        margin: -8rem;
+        margin-top: 18rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
       }
       h3 {
         @extend .txt;
-
+        order: 1;
         color: #ffffff;
         font-size: $font-xlg;
         white-space:nowrap;
@@ -56,6 +53,7 @@
       }
       h5{
         @extend .txt;
+        order: 2;
         font-size: 2rem;
         white-space: nowrap;
         @include breakpoint-down(small){
@@ -72,14 +70,12 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
     background-image: url(../../assets/backgrounds/header-bg.png);
     @include breakpoint-up(large){
       background-image: url(../../assets/backgrounds/header-bg@2x.png);
     }
     @include breakpoint-down(small){
-      padding: 10.75rem 11.4rem ;
+      padding: 0;
       height: 58vh;
     }
 

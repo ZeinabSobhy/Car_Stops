@@ -1,5 +1,6 @@
 import React,{useContext} from 'react';
 import {LocalizationContext} from "../../context/LocalizationContext";
+import Bidding from "../../Components/Bidding";
 
 
 const StartToday = props =>  {
@@ -10,7 +11,7 @@ const StartToday = props =>  {
 
           </div>
           <div className="start_container_bidding">
-
+                 {/*<Bidding/>*/}
           </div>
       </section>
     );

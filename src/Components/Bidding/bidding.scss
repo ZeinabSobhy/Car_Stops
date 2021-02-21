@@ -1,0 +1,45 @@
+@import "../../Containers/App/_mixinis.scss";
+@import "../../Containers/App/_variables.scss";
+.txt_{
+  color: #ffffff;
+  font-style: normal;
+  text-align: center;
+  font-weight: bold;
+  line-height: normal;
+  font-stretch: normal;
+  letter-spacing: -0.63px;
+}
+.bidding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &_img{
+    width: 59px;
+    height: 60px;
+    object-fit: contain;
+  }
+  &_h3{
+    @extend .txt_;
+    width: 30.938rem;
+    height: 39px;
+    margin: 30px 13px 10px;
+    font-size: 30px;
+    white-space: nowrap;
+    @include breakpoint-down(small){
+      font-size: 41px;
+      width: 15.9rem;
+
+    }
+  }
+  &_h5{
+    @extend .txt_;
+    width: 521px;
+    height: 26px;
+    margin: 10px 0 0;
+    font-size: 20px;
+    @include breakpoint-down(small){
+      font-size: 28px;
+    }
+  }
+}
