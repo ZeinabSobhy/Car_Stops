@@ -5,9 +5,9 @@ import './bidding.scss';
 const Bidding = props => {
     return(
         <div className="bidding">
-            <img className="bidding_img" src={bidIcon}/>
-              <h3 className="bidding_h3"> <FormattedMessage id="bidding.title" /></h3>
-            <h5 className="bidding_h5"><FormattedMessage id="bidding.subtitle" /></h5>
+            <img src={bidIcon}/>
+              <h3 > <FormattedMessage id="bidding.title" /></h3>
+            <p><FormattedMessage id="bidding.subtitle" /></p>
         </div>
     )
 }

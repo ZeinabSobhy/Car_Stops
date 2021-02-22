@@ -11,7 +11,7 @@ const StartToday = props =>  {
 
           </div>
           <div className="start_container_bidding">
-                 {/*<Bidding/>*/}
+                 <Bidding/>
           </div>
       </section>
     );

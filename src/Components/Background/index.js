@@ -1,7 +1,6 @@
 import React from "react";
 import {FormattedMessage} from "react-intl";
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 const Background = props => {
     return(
         <section className="background">
@@ -9,7 +8,7 @@ const Background = props => {
                     <div className="background_img_txt">
                         <h3><FormattedMessage id="background.title"/></h3>
                         <h5><FormattedMessage id="background.subtitle" /></h5>
-                            <button> <FormattedMessage id="background.btn" /> <ArrowDownwardIcon className="background_img_ico"/> </button>
+                            <button> <FormattedMessage id="background.btn" /> <KeyboardArrowDownIcon className="background_img_ico"/> </button>
                     </div>
 
               </div>
