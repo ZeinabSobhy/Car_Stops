@@ -22,17 +22,22 @@
     margin-bottom: 2rem;
   }
   h3{
-    @extend .txt;
+    @extend .txt_;
     align-self: center;
     font-size: $font-bid;
     white-space: nowrap;
+    @include breakpoint-down(medium){
+      white-space:unset;
+      font-size:$font-med;
+      width:20.938rem;
+    }
     @include breakpoint-down(small){
       font-size:$font-med;
       width:20.938rem;
     }
   }
   p{
-    @extend .txt;
+    @extend .txt_;
     font-weight: normal;
     font-size: $font-sm;
     width:20.938rem;
@@ -41,10 +46,14 @@
       white-space: nowrap;
       text-align: center;
     }
+    @include breakpoint-down(medium){
+      font-size:$font-sm;
+      white-space: unset;
+      text-align: center;
+    }
     @include breakpoint-down(small){
       font-size:0.9rem;
       align-self: center;
     }
   }
-
 }

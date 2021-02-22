@@ -1,6 +1,8 @@
 import React,{useContext} from 'react';
 import {LocalizationContext} from "../../context/LocalizationContext";
 import Bidding from "../../Components/Bidding";
+import HowItWorks from "../../Components/HowItWorks";
+
 
 
 const StartToday = props =>  {
@@ -8,6 +10,7 @@ const StartToday = props =>  {
     return(
       <section className="start_container">
           <div className="start_container_howItWorks">
+              <HowItWorks/>
 
           </div>
           <div className="start_container_bidding">

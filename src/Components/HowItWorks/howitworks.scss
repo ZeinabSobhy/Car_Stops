@@ -1,0 +1,76 @@
+@import "../../Containers/App/_mixinis.scss";
+@import "../../Containers/App/_variables.scss";
+.txt_How{
+  font-family: Roboto;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.97px;
+}
+.howItWorks{
+  padding:6rem;
+>h3{
+   @extend .txt_How;
+  color: #ffffff;
+  font-size: 2.188rem;
+}
+  ul{
+    right: 2rem;
+  }
+  >p{
+@extend .txt_How;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    font-size: $font-med;
+  }
+
+ &_ico{
+   margin: 1rem;
+   padding: 1.4rem;
+   width: 3.125rem;
+   height:3.125rem;
+   border-radius: 67px;
+   box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
+   background-image: linear-gradient(225deg, #ec1c24, #f91c3d);
+   >p{
+     align-self: center;
+     width: 14px;
+     height: 24px;
+     font-family: Roboto;
+     font-size: 24px;
+     font-weight: bold;
+     font-stretch: normal;
+     font-style: normal;
+     line-height: 1;
+     letter-spacing: -0.6px;
+     text-align: center;
+     color: #ffffff;
+   }
+ }
+  }
+
+
+.title{
+  width: 6.875rem;
+  height:1.313rem;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.44px;
+  text-align: center;
+  color: #ffffff;
+}
+.subtitle {
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: #ffffff;
+}
