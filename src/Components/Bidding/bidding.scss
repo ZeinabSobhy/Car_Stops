@@ -13,33 +13,38 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  &_img{
+  text-align: center;
+  img{
     width: 59px;
     height: 60px;
     object-fit: contain;
+    align-self: center;
+    margin-bottom: 2rem;
   }
-  &_h3{
-    @extend .txt_;
-    width: 30.938rem;
-    height: 39px;
-    margin: 30px 13px 10px;
-    font-size: 30px;
+  h3{
+    @extend .txt;
+    align-self: center;
+    font-size: $font-bid;
     white-space: nowrap;
     @include breakpoint-down(small){
-      font-size: 41px;
-      width: 15.9rem;
-
+      font-size:$font-med;
+      width:20.938rem;
     }
   }
-  &_h5{
-    @extend .txt_;
-    width: 521px;
-    height: 26px;
-    margin: 10px 0 0;
-    font-size: 20px;
+  p{
+    @extend .txt;
+    font-weight: normal;
+    font-size: $font-sm;
+    width:20.938rem;
+    @include breakpoint-up(medium){
+     font-size:$font-med;
+      white-space: nowrap;
+      text-align: center;
+    }
     @include breakpoint-down(small){
-      font-size: 28px;
+      font-size:0.9rem;
+      align-self: center;
     }
   }
+
 }
