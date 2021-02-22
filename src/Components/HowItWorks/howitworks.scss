@@ -13,13 +13,19 @@
 >h3{
    @extend .txt_How;
   color: #ffffff;
-  font-size: 2.188rem;
+  font-size: $font-med;
+  @include breakpoint-up(large){
+    font-size: 2.188rem;
+  }
   @include breakpoint-down(small){
     font-size: 1.188rem;
   }
 }
   ul{
     right: 2rem;
+    @include breakpoint-down(medium){
+      right:5rem;
+    }
     @include breakpoint-down(small){
       right:6rem;
       white-space:nowrap;
@@ -29,7 +35,10 @@
 @extend .txt_How;
     font-weight: normal;
     letter-spacing: -0.5px;
-    font-size: $font-med;
+    font-size:$font-sm;
+    @include breakpoint-up(large){
+      font-size: $font-med;
+    }
     @include breakpoint-down(small){
     white-space:nowrap;
   }
@@ -52,7 +61,7 @@
      width: 14px;
      height: 24px;
      font-family: Roboto;
-     font-size: 24px;
+     font-size: $font-med;
      font-weight: bold;
      font-stretch: normal;
      font-style: normal;
@@ -62,6 +71,9 @@
      color: #ffffff;
      @include breakpoint-down(small){
        font-size: 13px;
+     }
+     @include breakpoint-up(large){
+       font-size: 24px;
      }
 
    }
