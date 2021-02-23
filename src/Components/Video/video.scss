@@ -5,8 +5,13 @@
   font-style: normal;
   line-height: normal;
   font-family: Roboto;
+  margin-top: 0.5rem;
 }
 .video_txt{
+  @include breakpoint-down(medium){
+    justify-content:center;
+  }
+  margin-block-start: 2.3rem;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -21,7 +26,9 @@
     font-weight: bold;
     color: #000000;
     letter-spacing: -0.58px;
-
+    @include breakpoint-down(medium){
+     font-size:1.2rem;
+    }
   }
   h4{
     @extend .sara_txt;
@@ -29,6 +36,10 @@
     font-weight: 500;
     letter-spacing: -0.37px;
     color: #595f6f;
+    @include breakpoint-down(medium){
+      font-size:0.9rem;
+
+    }
   }
   h5{
     @extend .sara_txt;
@@ -36,6 +47,9 @@
     color: #595f6f;
     font-weight: normal;
     font-size: 0.9rem;
+    @include breakpoint-down(medium){
+      font-size:0.7rem;
+    }
   }
 h6{
   @extend .sara_txt;
@@ -45,7 +59,9 @@ h6{
   line-height: normal;
   letter-spacing: -0.33px;
   color: #595f6f;
-
+  @include breakpoint-down(medium){
+    font-size:0.7rem;
+  }
 }
 }
 
