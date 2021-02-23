@@ -11,36 +11,66 @@
   height:64rem;
   width:100%;
   display: flex;
+  @include breakpoint-down(medium){
+   flex-direction:column;
+  }
   justify-content:flex-start;
   &_title{
+    order:1;
     text-align: center;
     align-content: center;
     height:11vh;
-    order:1;
+    margin-top: 3rem;
+    @include breakpoint-up(large){
+      margin-inline-end: 35rem;
+    }
     h4{
       @extend .txt;
       font-weight: bold;
-      font-size:2.188rem;
+      font-size:1.188rem;
       line-height: normal;
       letter-spacing: -0.73px;
       color: #000000;
+      @include breakpoint-up(large){
+        font-size:2.188rem;
+      }
+      @include breakpoint-down(small){
+        font-size:1.3rem;
+
+      }
     }
     p{
       @extend .txt;
       line-height: 1.56;
       letter-spacing: -0.45px;
       color: #595f6f;
-      font-size:1.125rem ;
+      font-size:0.95rem ;
+      @include breakpoint-up(large){
+        font-size:1.125rem;
+        white-space: nowrap;
+      }
+      @include breakpoint-down(small){
+        font-size: 0.7rem;
+
+      }
     }
   }
   &_container{
-    order:2;
+    display:flex;
     padding:0;
     margin:0 auto;
-    display:flex;
     flex-direction:row;
     width:90%;
+    @include breakpoint-up(large){
+      order:unset;
+      align-content: center;
+      align-items: flex-start;
+    }
 
+    @include breakpoint-down(medium){
+      flex-direction: column;
+      order:2;
+    }
     &_video{
       width:50%;
       order:1;
