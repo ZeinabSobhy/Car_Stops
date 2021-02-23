@@ -1,20 +1,24 @@
-import React from 'react';
-import './FormAndVideo.scss';
+import React from "react";
+import './styles.scss';
+import Video from "../../Components/Video";
 import {FormattedMessage} from "react-intl";
-import SellVideo from "../../Components/SellVideo";
 
-const FormAndVideo = props =>   {
+
+const FormAndVideo = props =>  {
     return(
-     <section className="form-section">
-            <h3> <FormattedMessage id="startToday.title" /></h3>
-            <p>  <FormattedMessage id="startToday.subtitle" /></p>
-            <div className="form-section_container">
-                <SellVideo/>
+        <section className="form">
+           <div className="form_container">
+              <div className="form_title">
+                  <h4><FormattedMessage id="startToday.title" /></h4>
+                  <p><FormattedMessage id="startToday.subtitle" /></p>
+              </div>
+             <Video className="form_container_video"/>
 
-            </div>
-     </section>
-    )
-};
+           </div>
+        </section>
+
+    );
+}
 
 
 export default FormAndVideo;

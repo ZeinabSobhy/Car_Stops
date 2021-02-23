@@ -1,0 +1,55 @@
+@import "../App/_mixinis.scss";
+@import "../App/_variables.scss";
+.txt{
+  font-family: Roboto;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: center;
+}
+
+.form {
+  height:64rem;
+  width:100%;
+  display: flex;
+  justify-content:flex-start;
+  &_title{
+    text-align: center;
+    align-content: center;
+    height:11vh;
+    order:1;
+    h4{
+      @extend .txt;
+      font-weight: bold;
+      font-size:2.188rem;
+      line-height: normal;
+      letter-spacing: -0.73px;
+      color: #000000;
+    }
+    p{
+      @extend .txt;
+      line-height: 1.56;
+      letter-spacing: -0.45px;
+      color: #595f6f;
+      font-size:1.125rem ;
+    }
+  }
+  &_container{
+    order:2;
+    padding:0;
+    margin:0 auto;
+    display:flex;
+    flex-direction:row;
+    width:90%;
+
+    &_video{
+      width:50%;
+      order:1;
+    }
+
+
+    &_form{
+      width:50%;
+      order:2;
+    }
+  }
+}

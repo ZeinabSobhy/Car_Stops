@@ -1,0 +1,28 @@
+@import "../../Containers/App/_mixinis.scss";
+@import "../../Containers/App/_variables.scss";
+
+
+.play_div{
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 4.188rem;
+  box-shadow: 1.25rem 1.25rem 1.25rem 0 rgba(0, 0, 0, 0.4);
+  background-color: #ec1c24;
+  &_play{
+    width: 0.938rem;
+    height: 0.938rem;
+    object-fit: contain;
+    align-self: center;
+  }
+}
+.video_sara{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 11rem 0rem;
+  align-items: baseline;
+
+}
+.css-1qk1t6n{
+  background-color: unset !important;
+}
