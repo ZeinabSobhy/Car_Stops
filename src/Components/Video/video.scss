@@ -1,0 +1,106 @@
+@import "../../Containers/App/_mixinis.scss";
+@import "../../Containers/App/_variables.scss";
+.sara_txt{
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  font-family: Roboto;
+  margin-top: 0.5rem;
+}
+.video_txt{
+  @include breakpoint-down(medium){
+    justify-content:center;
+  }
+  margin-block-start: 2.3rem;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: 2rem;
+  @include breakpoint-up(large){
+    margin-inline-start: 2rem;
+  margin-block-start: 2rem;
+  }
+  h3{
+    @extend .sara_txt;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    letter-spacing: -0.58px;
+    @include breakpoint-down(medium){
+     font-size:1.2rem;
+    }
+  }
+  h4{
+    @extend .sara_txt;
+    font-size:1.025rem;
+    font-weight: 500;
+    letter-spacing: -0.37px;
+    color: #595f6f;
+    @include breakpoint-down(medium){
+      font-size:0.9rem;
+
+    }
+  }
+  h5{
+    @extend .sara_txt;
+    letter-spacing: -0.33px;
+    color: #595f6f;
+    font-weight: normal;
+    font-size: 0.9rem;
+    @include breakpoint-down(medium){
+      font-size:0.7rem;
+    }
+  }
+h6{
+  @extend .sara_txt;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.33px;
+  color: #595f6f;
+  @include breakpoint-down(medium){
+    font-size:0.7rem;
+  }
+}
+}
+
+.css-18wbp41{
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 4.188rem;
+  box-shadow: 1.25rem 1.25rem 1.25rem 0 rgba(0, 0, 0, 0.4);
+  background-color: #ec1c24;
+}
+.video_sara{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 11rem 0rem;
+  align-content: baseline;
+  align-items: flex-start;
+
+  @include breakpoint-down(medium){
+    width: 347px !important;
+    height: 231px !important;
+    margin-block-start: 7rem;
+    order:2;
+&_txt{
+  order: 1;
+}
+
+  }
+
+}
+.css-1qk1t6n{
+  background-color: unset !important;
+}
+.css-16rnaa5{
+  @include breakpoint-down(small){
+    width: 347px !important;
+    height: 231px !important;
+    margin-left: 1rem;
+    margin-block-start: -5rem;
+
+  }
+}

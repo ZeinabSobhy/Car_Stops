@@ -5,14 +5,19 @@ import reportWebVitals from './reportWebVitals';
 import {EmployeeProvider} from "./context/employeeContext";
 import {LocalizationProvider} from "./context/LocalizationContext";
 import {BrowserRouter} from "react-router-dom";
+import {CarsProvider} from "./context/CarContext";
+import {FormProvider} from "./context/FormContext";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
           <LocalizationProvider>
               <EmployeeProvider>
-
-                  <App />
+              <CarsProvider>
+                 <FormProvider>
+                     <App />
+                 </FormProvider>
+              </CarsProvider>
               </EmployeeProvider>
           </LocalizationProvider>
       </BrowserRouter>

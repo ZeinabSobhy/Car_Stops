@@ -35,7 +35,7 @@
       }
 
       @include breakpoint-down(small){
-        margin-top: 16rem;
+        margin-top: 18rem;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -47,7 +47,7 @@
         font-size: 2.188rem !important;
         white-space:nowrap;
         @include breakpoint-down(small){
-          font-size: 1.7rem;
+          font-size: 1.7rem !important;
         }
       }
      &_sub{
@@ -56,7 +56,7 @@
         font-size:1.563rem !important;
         white-space: nowrap;
         @include breakpoint-down(small){
-          font-size: $font-lg;
+          font-size: 1rem !important;
         }
 
       }
