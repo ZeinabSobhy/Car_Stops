@@ -1,0 +1,49 @@
+@import '../App/_mixinis.scss';
+@import '../App/_variables.scss';
+
+.start_today{
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.73px;
+  font-family: Roboto;
+}
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+  height:60VH;
+  h3{
+    order:1;
+    align-items: center;
+    margin-top:2rem;
+    color: #000000;
+    letter-spacing: -0.73px;
+    text-align: center;
+    width:10.938rem;
+    height:2.875rem;
+  }
+  p{
+    order:2;
+    font-family: Roboto;
+    font-size:1.125rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: -0.45px;
+    text-align: center;
+    color: #595f6f;
+    @include breakpoint-down(small){
+     font-size:1rem;
+    }
+  }
+  &_container{
+    width:100%;
+    order:3;
+    height: 45vh;
+
+  }
+}
