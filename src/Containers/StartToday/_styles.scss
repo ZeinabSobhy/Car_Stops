@@ -1,5 +1,5 @@
 @import '../App/_mixinis.scss';
-@import '../App/_mixinis.scss';
+@import '../App/_variables.scss';
 
 .start_container {
   display: flex;
@@ -7,11 +7,18 @@
   @include breakpoint-down(small){
     flex-flow: column nowrap;
   }
+  @include breakpoint-down(medium){
+    flex-flow: column nowrap;
+  }
   &_howItWorks{
     width: 50%;
     height:78vh;
     background-color: #323e47;
     @include breakpoint-down(small){
+      width: 100%;
+      min-width: 29.9375em;
+    }
+    @include breakpoint-down(medium){
       width: 100%;
       min-width: 29.9375em;
     }
@@ -29,6 +36,11 @@
       background-image: url(../../assets/backgrounds/red-bg@2x.png);
     }
     @include breakpoint-down(small){
+      min-width: 29.9375em;
+      width: 100%;
+      height:22.813rem;
+    }
+    @include breakpoint-down(medium){
       min-width: 29.9375em;
       width: 100%;
       height:22.813rem;

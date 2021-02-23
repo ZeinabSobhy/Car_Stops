@@ -13,16 +13,35 @@
 >h3{
    @extend .txt_How;
   color: #ffffff;
-  font-size: 2.188rem;
+  font-size: $font-med;
+  @include breakpoint-up(large){
+    font-size: 2.188rem;
+  }
+  @include breakpoint-down(small){
+    font-size: 1.188rem;
+  }
 }
   ul{
     right: 2rem;
+    @include breakpoint-down(medium){
+      right:5rem;
+    }
+    @include breakpoint-down(small){
+      right:6rem;
+      white-space:nowrap;
+    }
   }
   >p{
 @extend .txt_How;
     font-weight: normal;
     letter-spacing: -0.5px;
-    font-size: $font-med;
+    font-size:$font-sm;
+    @include breakpoint-up(large){
+      font-size: $font-med;
+    }
+    @include breakpoint-down(small){
+    white-space:nowrap;
+  }
   }
 
  &_ico{
@@ -33,12 +52,16 @@
    border-radius: 67px;
    box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
    background-image: linear-gradient(225deg, #ec1c24, #f91c3d);
+   @include breakpoint-down(small){
+     width: 0.3rem;
+     height: 0.3vh;
+   }
    >p{
      align-self: center;
      width: 14px;
      height: 24px;
      font-family: Roboto;
-     font-size: 24px;
+     font-size: $font-med;
      font-weight: bold;
      font-stretch: normal;
      font-style: normal;
@@ -46,6 +69,13 @@
      letter-spacing: -0.6px;
      text-align: center;
      color: #ffffff;
+     @include breakpoint-down(small){
+       font-size: 13px;
+     }
+     @include breakpoint-up(large){
+       font-size: 24px;
+     }
+
    }
  }
   }
@@ -63,6 +93,9 @@
   letter-spacing: -0.44px;
   text-align: center;
   color: #ffffff;
+  @include breakpoint-down(small){
+   font-size: 1rem;
+  }
 }
 .subtitle {
   font-family: Roboto;
@@ -73,4 +106,7 @@
   line-height: 1.29;
   letter-spacing: normal;
   color: #ffffff;
+  @include breakpoint-down(small){
+    font-size: 0.875rem;
+  }
 }
