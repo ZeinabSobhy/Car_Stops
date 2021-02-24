@@ -1,0 +1,17 @@
+@import "../App/_mixinis.scss";
+@import "../App/_variables.scss";
+
+
+.services{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  background-color: #f6fbff;
+  &_container{
+    width:90%;
+    display:flex;
+    justify-content:space-around;
+    flex-direction:row;
+  }
+
+}

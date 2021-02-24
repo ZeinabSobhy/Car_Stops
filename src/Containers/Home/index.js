@@ -3,6 +3,7 @@ import './_Home.scss';
 import Background from "../../Components/Background";
 import StartToday from "../StartToday";
 import FormAndVideo from "../FormAndVideo";
+import Services from "../Services";
 
 
 const Home = props =>  {
@@ -11,6 +12,7 @@ const Home = props =>  {
             <Background/>
             <StartToday/>
             <FormAndVideo/>
+            <Services/>
         </section>
     )
 }
