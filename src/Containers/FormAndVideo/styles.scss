@@ -20,9 +20,11 @@
     text-align: center;
     align-content: center;
     height:11vh;
-    margin-top: 3rem;
+    margin-top: 2rem;
     @include breakpoint-up(large){
-      margin-inline-end: 35rem;
+      margin-inline-start: 35rem;
+      margin-block-start: -12rem;
+
     }
     h4{
       @extend .txt;
@@ -59,10 +61,10 @@
     display:flex;
     padding:0;
     margin:0 auto;
-    flex-direction:row;
+    flex-direction:column;
     width:90%;
     @include breakpoint-up(large){
-      order:unset;
+justify-content:center;
       align-content: center;
       align-items: flex-start;
     }
@@ -71,15 +73,27 @@
       flex-direction: column;
       order:2;
     }
-    &_video{
-      width:50%;
-      order:1;
-    }
+    &_grid{
+      display:flex;
+      order: 2;
+      flex-direction:row;
+      @include breakpoint-up(large){
+        width: 100%;
+      }
+      @include breakpoint-down(medium){
+        flex-direction: column;
+      }
+
+      &_video{
+        width:50%;
+        order:1;
+      }
 
 
-    &_form{
-      width:50%;
-      order:2;
+      &_form{
+        width:50%;
+        order:2;
+      }
     }
   }
 }

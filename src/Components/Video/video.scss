@@ -73,18 +73,21 @@ h6{
   background-color: #ec1c24;
 }
 .video_sara{
+  order: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 11rem 0rem;
+  margin: 4rem 0rem;;
   align-content: baseline;
   align-items: flex-start;
-
+  @include breakpoint-up(large){
+    width: 50%;
+  }
   @include breakpoint-down(medium){
     width: 347px !important;
     height: 231px !important;
     margin-block-start: 7rem;
-    order:2;
+    order:1;
 &_txt{
   order: 1;
 }

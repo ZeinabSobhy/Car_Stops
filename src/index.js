@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './Containers/App/App';
 import reportWebVitals from './reportWebVitals';
-import {EmployeeProvider} from "./context/employeeContext";
 import {LocalizationProvider} from "./context/LocalizationContext";
 import {BrowserRouter} from "react-router-dom";
 import {CarsProvider} from "./context/CarContext";
@@ -12,13 +11,11 @@ ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
           <LocalizationProvider>
-              <EmployeeProvider>
               <CarsProvider>
                  <FormProvider>
                      <App />
                  </FormProvider>
               </CarsProvider>
-              </EmployeeProvider>
           </LocalizationProvider>
       </BrowserRouter>
   </React.StrictMode>,
