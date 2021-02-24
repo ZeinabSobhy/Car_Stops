@@ -11,6 +11,7 @@
     flex-flow: column nowrap;
   }
   &_howItWorks{
+    overflow: hidden;
     width: 50%;
     height:78vh;
     background-color: #323e47;
