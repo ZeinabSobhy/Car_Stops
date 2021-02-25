@@ -32,6 +32,19 @@
   }
 }
 .error_div {
+  &_msg{
+    align-self: flex-start;
+    display: flex;
+    justify-content:flex-start;
+    font-family: Roboto;
+    font-size:1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
   p{
     margin-top: 0.5rem;
     text-align: center;
@@ -63,9 +76,9 @@
 flex-direction: column;
   margin-block-start: 15rem;
   margin-inline-start: 3rem;
-  @include breakpoint-down(small){
-    margin-block-start: 3rem;
-    margin-inline-start: 1rem;
+  @include breakpoint-down(medium){
+    margin-block-start: 7rem;
+    margin-inline-start: 2.125rem;
   }
   @include breakpoint-up(large){
     margin-block-start: 3rem;
@@ -86,6 +99,10 @@ flex-direction: column;
     &:hover{
       border: solid 1px #ec1c24;
     }
+    &:active{
+      border: solid 1px #ec1c24;
+    }
+   
   }
   option{
     font-family: Roboto;

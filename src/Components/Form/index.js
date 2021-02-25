@@ -15,10 +15,10 @@ const Form = props => {
     const [maker , setMaker] = useState("Please Select A Maker")
     const [models,setModels] = useState([])
     const [item , setItem] = useState("Please Select A Modal");
-    const [error , setError] = useState({maker:false , model:false , fullName:false , phone:false})
+    const [error , setError] = useState({maker:null , model:null , fullName:null , phone:null})
     const [phone , setPhone] = useState(null);
     const [name , setName] = useState(null);
-    const [formIsValid , setFormIsValid] = useState(true);
+    const [formIsValid , setFormIsValid] = useState(false);
     const [sent , handleSent] = useContext(FormContext);
     const [locale , setLocale] = useContext(LocalizationContext)
     useEffect(() =>  {
@@ -62,7 +62,6 @@ const Form = props => {
     },[maker]);
     const handleSubmit = (event) =>  {
         event.preventDefault();
-        console.log(error);
         if(error.fullName ===   false &&  error.phone ===   false &&  error.maker ===    false &&  error.model ===  false ) {
             setFormIsValid(true);
             handlePostRequest({Make:maker , Model:item , PhoneNumber:phone, FullName:name})
@@ -73,12 +72,10 @@ const Form = props => {
     };
     const handlePostRequest = (body) => {
         postCarRequest(body).then((res) => {
-            console.log("RES",res)
             sendRequest(true);
 
         }, error => {
-            console.log(error);
-            sendRequest(false);
+            sendRequest(null);
 
         })
     };
@@ -97,6 +94,11 @@ const Form = props => {
 return(
     <div className="form_div">
         <form autoComplete={false} onSubmit={(event)=> {handleSubmit(event)}}>
+            {formIsValid != true ? null :  <div className="error_div">
+                <p className="error_div_msg">
+                    <FormattedMessage id="validation.allFields" />
+                </p>
+            </div>}
            <h4> <FormattedMessage id="startToday.formSection.headline" /></h4>
             <FormControl>
                 <label className="form_div_label" >
@@ -152,7 +154,7 @@ return(
                 {error.phone ? errorMessage(<FormattedMessage id="validation.phone" />):null}
             </FormControl>
             <FormControl>
-                <button type="submit" className="btn_confirm">
+                <button onClick={(e) => handleSubmit(e)} className="btn_confirm">
                   <FormattedMessage id="startToday.formSection.sendBtn" />
                     <ArrowForwardIosIcon style={{color:'#ffffff' , fontSize:'small' , marginInline:' 0.27rem' , transform: locale ==  "en" ? null : 'scale(-1)'}}/>
                 </button>

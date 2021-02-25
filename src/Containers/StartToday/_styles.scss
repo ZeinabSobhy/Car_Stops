@@ -13,7 +13,7 @@
   &_howItWorks{
     overflow: hidden;
     width: 50%;
-    height:78vh;
+    height:90vh;
     background-color: #323e47;
     @include breakpoint-down(small){
       width: 100%;
@@ -37,7 +37,7 @@
     justify-content:center;
     align-items: center;
     width: 50%;
-    height:78vh;
+    height:90vh;
     background-image: url(../../assets/backgrounds/red-bg.png);
     @include breakpoint-up(large){
       background-image: url(../../assets/backgrounds/red-bg@2x.png);

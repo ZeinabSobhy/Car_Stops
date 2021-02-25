@@ -6,9 +6,9 @@
   @include breakpoint-up(large){
     width: 80%;
     height: auto;
-    margin: 1.4rem auto;
+    margin: 5.95rem auto;
   }
-  padding: 3.95rem;
+  padding: 3.7rem;
   @include breakpoint-down(small){
     padding: unset;
   }
@@ -38,6 +38,10 @@
       line-height: normal;
       letter-spacing: -0.97px;
       color: #ffffff;
+      @include breakpoint-down(small){
+        font-size: 1.65rem;
+        width: 10.063rem;
+      }
     }
     p{
       display: flex;
@@ -52,6 +56,9 @@
       line-height: normal;
       letter-spacing: -0.5px;
       color: #ffffff;
+      @include breakpoint-down(small){
+        font-size: 0.9rem;
+      }
     }
   }
   &_items{

@@ -6,6 +6,12 @@
   line-height: normal;
   font-family: Roboto;
   margin-top: 0.5rem;
+  display: flex;
+
+  @include breakpoint-down(medium){
+    display: flex;
+    text-align: center;
+  }
 }
 .video_txt{
   @include breakpoint-down(medium){
@@ -26,8 +32,13 @@
     font-weight: bold;
     color: #000000;
     letter-spacing: -0.58px;
+    width: 449px;
+    height: 37px;
+    align-self: flex-start;
     @include breakpoint-down(medium){
      font-size:1.2rem;
+      width: 304px;
+      height: 37px;
     }
   }
   h4{
@@ -36,9 +47,14 @@
     font-weight: 500;
     letter-spacing: -0.37px;
     color: #595f6f;
+    width: 272px;
+    height: 24px;
+    align-self: flex-start;
     @include breakpoint-down(medium){
+      margin-inline: 2.125rem;
       font-size:0.9rem;
-
+      align-self: center;
+width:290px;
     }
   }
   h5{
@@ -47,8 +63,13 @@
     color: #595f6f;
     font-weight: normal;
     font-size: 0.9rem;
+    width: 505px;
+    height: 42px;
+    overflow: hidden;
+    align-self: flex-start;
     @include breakpoint-down(medium){
       font-size:0.7rem;
+      width:300px;
     }
   }
 h6{
@@ -58,9 +79,14 @@ h6{
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.33px;
+  align-self: flex-start;
   color: #595f6f;
+  width: 154px;
+  height: 21px;
   @include breakpoint-down(medium){
     font-size:0.7rem;
+    align-self: center;
+
   }
 }
 }
@@ -86,8 +112,9 @@ h6{
   @include breakpoint-down(medium){
     width: 347px !important;
     height: 231px !important;
-    margin-block-start: 7rem;
+    margin-block-start: 11rem;
     order:1;
+    justify-content: center;
 &_txt{
   order: 1;
 }
