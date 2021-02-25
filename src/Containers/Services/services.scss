@@ -24,6 +24,13 @@
     justify-content: flex-start;
     flex-direction:column;
     &_title{
+      margin-block-end: 2rem;
+      @include breakpoint-up(large){
+        margin-block-start:  10rem;
+      }
+      @include breakpoint-down(medium){
+        margin-block-start: 5rem;
+      }
       display:flex;
       order:1;
       align-content: center;
@@ -64,7 +71,28 @@
         }
       }
     }
+    &_grid{
+     margin-block-start: 3rem;
+      order: 2;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      @include breakpoint-down(medium){
+        flex-direction: column;
+        align-content: space-around;
+        justify-content: center;
+        align-items: center;
+      }
+      >*{
+        flex-basis: 22.5rem;
+        display: flex;
+        @include breakpoint-down(medium){
+          margin-block-start:4rem;
+          flex-basis: 14rem;
+        }
 
+      }
+    }
     }
   }
 
