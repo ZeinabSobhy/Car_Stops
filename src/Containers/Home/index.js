@@ -5,6 +5,7 @@ import StartToday from "../StartToday";
 import FormAndVideo from "../FormAndVideo";
 import Services from "../Services";
 import GetPrepared from "../Getprepared";
+import Documents from "../Documents";
 
 
 const Home = props =>  {
@@ -15,6 +16,7 @@ const Home = props =>  {
             <FormAndVideo/>
             <Services/>
             <GetPrepared/>
+            <Documents/>
         </section>
     )
 }
