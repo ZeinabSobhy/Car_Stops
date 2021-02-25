@@ -11,11 +11,12 @@
 
 .car-container{
   width: 100%;
-  height: 591vh;
+  height:  557vh;
   margin: 0 auto;
   padding: 0;
-  @include breakpoint-down(small){
-    height: 850vh;
+  @include breakpoint-down(medium){
+    height: 785vh;
   }
+
 
 }

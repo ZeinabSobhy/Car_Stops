@@ -24,7 +24,9 @@
   height: 3.125rem;
   margin: 3.125rem 0 0;
   padding: 0.8rem 0.75rem 0.9rem 0.9rem;
-
+  @include breakpoint-down(medium){
+   align-self: center;
+  }
 }
 .error_div {
   p{
