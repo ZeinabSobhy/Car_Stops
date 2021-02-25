@@ -105,7 +105,7 @@ return(
                 <select  style={error.maker ? { border: 'solid 1px #ec1c24', backgroundPosition:locale== "en" ? null :"2.5rem 1.2rem" ,
                     backgroundColor: 'rgba(236, 28, 36, 0.04)'}:{ backgroundPosition:locale== "en" ? '25.5rem 1.2rem' :"2.5rem 1.2rem" }} className="form_div_ele" value={maker} name={"car_make"} onBlur={(event) =>  {handleChangeMaker(event)}}  id={"car_make"} onChange={(event)=> {handleChangeMaker(event)}}>
                     <option value="" disabled selected>
-                        <FormattedMessage id="validation.makerLabel" />
+                        {locale == "en" ? "SELECT A MAKER" : "إختار صانع"}
                     </option>
                     {makers?.map((m) => {
                         return(
@@ -123,7 +123,7 @@ return(
                 <select style={error.model ? { border: 'solid 1px #ec1c24', backgroundPosition:locale== "en" ? null :"2.5rem 1.2rem" ,
                     backgroundColor: 'rgba(236, 28, 36, 0.04)'}:{ backgroundPosition:locale== "en" ? '25.5rem 1.2rem' :"2.5rem 1.2rem" }  } className="form_div_ele" id={"car_model"} value={item} onChange={(event)=> {handleChangeModel(event)}}>
                     <option value="" disabled selected>
-                        <FormattedMessage id="validation.modelLabel" />
+                        {locale == "en" ? "SELECT A MODEL" : "إختار طراز"}
                     </option>
                     {models?.map((m) => {
                         return(
