@@ -1,11 +1,14 @@
-import React from "react";
+import React , {useContext} from "react";
 import './styles.scss';
 import Video from "../../Components/Video";
 import {FormattedMessage} from "react-intl";
 import Form from "../../Components/Form";
+import {FormContext} from "../../context/FormContext";
+import Validation from "../../Components/Validation";
 
 
 const FormAndVideo = props =>  {
+    const [request , setRequest] = useContext(FormContext);
     return(
         <section className="form">
            <div className="form_container">
@@ -15,7 +18,7 @@ const FormAndVideo = props =>  {
               </div>
             <div className="form_container_grid">
                 <Video className="form_container_video"/>
-                <Form/>
+                {request == null ?  <Form/> : <Validation/>}
             </div>
            </div>
         </section>

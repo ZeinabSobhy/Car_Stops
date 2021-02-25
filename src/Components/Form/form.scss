@@ -24,6 +24,9 @@
   height: 3.125rem;
   margin: 3.125rem 0 0;
   padding: 0.8rem 0.75rem 0.9rem 0.9rem;
+  &:hover{
+    border: solid 1px #ec1c24;
+  }
   @include breakpoint-down(medium){
    align-self: center;
   }
@@ -79,6 +82,9 @@ flex-direction: column;
     background-color: #ffffff;
     @include breakpoint-down(medium){
      width:18.75rem;
+    }
+    &:hover{
+      border: solid 1px #ec1c24;
     }
   }
   option{

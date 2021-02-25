@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import {FormattedMessage} from "react-intl";
+import {FormattedMessage, useIntl} from "react-intl";
 import './howitworks.scss';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -11,9 +11,10 @@ import useTheme from '@material-ui/core/styles/useTheme'
 
 const HowItWorks = props =>  {
     const theme = useTheme();
+    const locale = useIntl().locale;
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('xs'));
     return (
-        <div className="howItWorks">
+        <div className="howItWorks" style={isSmallScreen && locale!="en" ? {padding:'0'} : null}>
             <h3> <FormattedMessage id="howItWorks.title"/></h3>
             <p><FormattedMessage id="howItWorks.subtitle"/></p>
             <List>
