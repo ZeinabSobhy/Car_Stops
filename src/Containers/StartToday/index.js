@@ -1,16 +1,14 @@
-import React,{useContext} from 'react';
-import {LocalizationContext} from "../../context/LocalizationContext";
+import React from 'react';
 import Bidding from "../../Components/Bidding";
-import HowItWorks from "../../Components/HowItWorks";
+import How from "../How";
 
 
 
 const StartToday = props =>  {
-    const [locale , setLocale] = useContext(LocalizationContext);
     return(
       <section className="start_container">
           <div className="start_container_howItWorks">
-              <HowItWorks/>
+<How/>
 
           </div>
           <div className="start_container_bidding">
