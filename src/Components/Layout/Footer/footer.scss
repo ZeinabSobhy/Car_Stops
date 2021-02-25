@@ -45,6 +45,9 @@ height:auto;
       }
     }
     p{
+      @include breakpoint-up(large){
+        text-align: justify;
+      }
       width: 32.5rem;
       height: 2.25rem;
       //margin-inline-start: -2rem;
@@ -68,7 +71,7 @@ height:auto;
   }
   &_social-icons{
     @include breakpoint-up(large){
-      margin-inline-end: 5rem;
+      margin-inline-end: 9rem;
     }
     order: 2;
     align-items: flex-start;
