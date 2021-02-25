@@ -1,0 +1,121 @@
+@import "../App/_mixinis.scss";
+@import "../App/_variables.scss";
+%pseudo-block {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin: 8px 20px 8px 0;
+  border-radius: 67px;
+  box-shadow: 20px 20px 60px 0 rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(225deg, #ec1c24, #f91c3d);
+}
+
+
+.prepared{
+  display: flex;
+  width:100%;
+  align-content: center;
+  &_container{
+    width:90%;
+    margin:0 auto;
+    flex-direction:column;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    &_title{
+      margin:0 auto;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content:center;
+      margin-block-start: 9rem;
+      h3{
+        order:1;
+        align-self: center;
+        width:26.313rem;
+        height:3.125rem;
+        font-family: Roboto;
+        font-size: 2.188rem;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.77;
+        letter-spacing: -0.73px;
+        text-align: center;
+        color: #000000;
+        @include breakpoint-down(medium){
+         width:22rem;
+          font-size:1.82rem;
+        }
+      }
+      p{
+        order:2;
+        align-self: center;
+        width:30.188rem;
+        height:1.5rem;
+        font-family: Roboto;
+        font-size: 1.01rem;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.45px;
+        text-align: center;
+        color: #595f6f !important;
+        @include breakpoint-down(medium){
+          width:18rem;
+          font-size:0.8rem;
+        }
+      }
+    }
+    &_grid{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @include breakpoint-down(medium){
+        flex-direction: column;
+      }
+      &_item{
+        @include breakpoint-down(medium){
+          width:100%;
+        }
+        width:50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        margin-inline-start: 3rem;
+        @include breakpoint-up(large){
+         margin-inline-start:3rem;
+          margin-block-start: 2.2rem;
+          align-content: baseline;
+        }
+        li {
+          display: flex;
+          align-content: flex-start;
+          justify-content: flex-start;
+align-items: baseline;
+          &:before {
+            @extend %pseudo-block;
+          }
+          p{
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.44;
+            letter-spacing: -0.5px;
+            color: #595f6f;
+            width: 25rem;
+            @include breakpoint-down(medium){
+              width:18rem;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
