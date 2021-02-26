@@ -77,13 +77,16 @@ flex-direction: column;
   margin-block-start: 15rem;
   margin-inline-start: 3rem;
   @include breakpoint-down(medium){
-    margin-block-start: 7rem;
+    margin-block-start: 3rem;
     margin-inline-start: 2.125rem;
   }
   @include breakpoint-up(large){
     margin-block-start: 3rem;
     margin-inline-start: 0;
 
+  }
+  &_ar{
+    background-position:2.125rem 1.2rem !important;
   }
   &_ele{
     width: 28.75rem;
@@ -93,6 +96,9 @@ flex-direction: column;
     border-radius: 5px;
     border: solid 1px #bfc4ce;
     background-color: #ffffff;
+    &:active{
+      border: unset;
+    }
     @include breakpoint-down(medium){
      width:18.75rem;
     }
@@ -102,7 +108,7 @@ flex-direction: column;
     &:active{
       border: solid 1px #ec1c24;
     }
-   
+
   }
   option{
     font-family: Roboto;
@@ -123,14 +129,13 @@ h4{
   line-height: normal;
   letter-spacing: -0.71px;
   color: #595f6f;
-  margin-block-start: 0.78rem;
-}
+  margin-block-start: 1.78rem;}
   form{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
-  select{
+  &_selectEn{
     border-radius: 5px;
     border: solid 1px #bfc4ce;
     display:flex;
@@ -142,11 +147,34 @@ h4{
     background:url(../../assets/icons/grey-arrow.svg);
     background-repeat: no-repeat;
     background-size: 1rem 0.9rem;
-    background-position: 25.5rem 1.2rem;
-    @include breakpoint-down(medium){
-      background-position: 14.5rem 1.2rem !important;
+    background-position: 14.5rem 1.2rem ;
+
+    @include breakpoint-up(large){
+      background-position: 21.5rem 1.2rem;
+
     }
+
 }
+  &_selectAr{
+    border-radius: 5px;
+    border: solid 1px #bfc4ce;
+    display:flex;
+    justify-content:flex-start;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    background:url(../../assets/icons/grey-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 1rem 0.9rem;
+    background-position: 3.5rem 1.2rem;
+
+    @include breakpoint-up(large){
+      background-position: 5.5rem 1.2rem;
+
+    }
+
+  }
   label{
     margin-top: 0.75rem;
     font-family: Roboto;

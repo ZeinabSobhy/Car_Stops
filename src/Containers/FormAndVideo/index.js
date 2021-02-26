@@ -18,7 +18,7 @@ const FormAndVideo = props =>  {
               </div>
             <div className="form_container_grid">
                 <Video className="form_container_video"/>
-                {request == null ?  <Form/> : <Validation/>}
+                {request == false ?  <Form/> : <Validation/>}
             </div>
            </div>
         </section>

@@ -15,10 +15,10 @@ const Form = props => {
     const [maker , setMaker] = useState("Please Select A Maker")
     const [models,setModels] = useState([])
     const [item , setItem] = useState("Please Select A Modal");
-    const [error , setError] = useState({maker:null , model:null , fullName:null , phone:null})
+    const [error , setError] = useState({maker:false , model:false , fullName:false , phone:false})
     const [phone , setPhone] = useState(null);
     const [name , setName] = useState(null);
-    const [formIsValid , setFormIsValid] = useState(false);
+    const [formIsValid , setFormIsValid] = useState(null);
     const [sent , handleSent] = useContext(FormContext);
     const [locale , setLocale] = useContext(LocalizationContext)
     useEffect(() =>  {
@@ -43,16 +43,16 @@ const Form = props => {
     const handleChangeMaker = (event) =>  {
         console.log(event , "BluR")
         if(event.type===   "blur") {
-            event.target.value ===   "Acura" ? setError({...error , maker:true}):setError({...error , maker:false})
+            event.target.value ===   "Acura" ? setFormIsValid(false):setFormIsValid(true)
         }
         const make = event.target.value;
-        make ===    null ? setError({...error , maker:true}):setError({...error , maker:false})
+        make ===    null ? setFormIsValid(false):setFormIsValid(true)
         setMaker(make);
     };
     const handleChangeModel = event =>  {
         const model_item = event.target.value;
         setItem(model_item);
-        !model_item ? setError({...error , model:true}):setError({...error , model:false})
+        !model_item ? setFormIsValid(false):setFormIsValid(true)
         console.log("ITEM",item)
     };
     useEffect(()=> {
@@ -62,15 +62,13 @@ const Form = props => {
     },[maker]);
     const handleSubmit = (event) =>  {
         event.preventDefault();
-        if(error.fullName ===   false &&  error.phone ===   false &&  error.maker ===    false &&  error.model ===  false ) {
-            setFormIsValid(true);
+        if(setFormIsValid && !error.fullName && !error.phone) {
             handlePostRequest({Make:maker , Model:item , PhoneNumber:phone, FullName:name})
             console.log("FORM" , [phone,item, maker , name]);
-        }else {
-            setFormIsValid(false);
         }
     };
     const handlePostRequest = (body) => {
+        sendRequest(true);
         postCarRequest(body).then((res) => {
             sendRequest(true);
 
@@ -81,20 +79,33 @@ const Form = props => {
     };
     const handleChangeFullName = event =>  {
         const fullName = event.target.value;
-        fullName=== "" ||   fullName===   null ||  /^\d+$/.test(fullName)? setError({...error , fullName:true}):setError({...error , fullName:false})
+
+        if(fullName=== "" ||   fullName===   null ||  /^\d+$/.test(fullName)) {
+            setError({...error , fullName:true})
+            setFormIsValid(false)
+
+        }else {
+            setError({...error , fullName:false})
+        }
         setName(fullName);
     };
     const handleChangePhone = event =>  {
         const num = event.target.value;
+           if ( num=== "" || num ===   null ) {
+               setError({...error , phone:true})
+              setFormIsValid(false)
+           }
+        else {
+               setError({...error , phone:false})
 
-        num=== "" || num ===   null ? setError({...error , phone:true}):setError({...error , phone:false})
+           }
         setPhone(num);
     };
 
 return(
     <div className="form_div">
         <form autoComplete={false} onSubmit={(event)=> {handleSubmit(event)}}>
-            {formIsValid != true ? null :  <div className="error_div">
+            {formIsValid==null ? null :  <div className="error_div">
                 <p className="error_div_msg">
                     <FormattedMessage id="validation.allFields" />
                 </p>
@@ -104,14 +115,14 @@ return(
                 <label className="form_div_label" >
                     <FormattedMessage id="startToday.formSection.firstLabel" />
                 </label>
-                <select  style={error.maker ? { border: 'solid 1px #ec1c24', backgroundPosition:locale== "en" ? null :"2.5rem 1.2rem" ,
-                    backgroundColor: 'rgba(236, 28, 36, 0.04)'}:{ backgroundPosition:locale== "en" ? '25.5rem 1.2rem' :"2.5rem 1.2rem" }} className="form_div_ele" value={maker} name={"car_make"} onBlur={(event) =>  {handleChangeMaker(event)}}  id={"car_make"} onChange={(event)=> {handleChangeMaker(event)}}>
+                <select  style={error.maker ? { border: 'solid 1px #ec1c24', backgroundColor: 'rgba(236, 28, 36, 0.04)'}:null}
+                         className={locale == "en" ? "form_div_ele form_div_selectEn" : "form_div_ele form_div_selectAr"} value={maker} name={"car_make"} onBlur={(event) =>  {handleChangeMaker(event)}}  id={"car_make"} onChange={(event)=> {handleChangeMaker(event)}}>
                     <option value="" disabled selected>
                         {locale == "en" ? "SELECT A MAKER" : "إختار صانع"}
                     </option>
                     {makers?.map((m) => {
                         return(
-                            <option value={m}>{m}</option>
+                            <option onClick={(e)=>{handleChangeMaker(e)}} value={m}>{m}</option>
                         )
                     })
                     }
@@ -122,14 +133,14 @@ return(
                 <label  className="form_div_label" for={"car_model"}>
                     <FormattedMessage id="startToday.formSection.secondLabel" />
                 </label>
-                <select style={error.model ? { border: 'solid 1px #ec1c24', backgroundPosition:locale== "en" ? null :"2.5rem 1.2rem" ,
-                    backgroundColor: 'rgba(236, 28, 36, 0.04)'}:{ backgroundPosition:locale== "en" ? '25.5rem 1.2rem' :"2.5rem 1.2rem" }  } className="form_div_ele" id={"car_model"} value={item} onChange={(event)=> {handleChangeModel(event)}}>
+                <select style={error.model ? { border: 'solid 1px #ec1c24',
+                    backgroundColor: 'rgba(236, 28, 36, 0.04)'}:null }  className={locale == "en" ? "form_div_ele form_div_selectEn" : "form_div_ele form_div_selectAr"}  id={"car_model"} value={item} onChange={(event)=> {handleChangeModel(event)}}>
                     <option value="" disabled selected>
                         {locale == "en" ? "SELECT A MODEL" : "إختار طراز"}
                     </option>
                     {models?.map((m) => {
                         return(
-                            <option value={m}>{m}</option>
+                            <option onClick={(e) => {handleChangeModel(e)}} value={m}>{m}</option>
                         )
                     })
                     }

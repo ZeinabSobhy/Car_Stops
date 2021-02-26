@@ -10,6 +10,9 @@ html {
 }
 
 body {
+  button{
+    border: unset;
+  }
   font-family: $font-family;
   font-size: $font-sm;
   font-weight: 300;

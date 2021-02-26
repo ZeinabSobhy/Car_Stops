@@ -7,15 +7,18 @@
   font-family: Roboto;
   margin-top: 0.5rem;
   display: flex;
-
   @include breakpoint-down(medium){
-    display: flex;
+    justify-content:center;
     text-align: center;
   }
 }
 .video_txt{
   @include breakpoint-down(medium){
     justify-content:center;
+    text-align: center;
+    align-content: baseline;
+    align-items: flex-start;
+    margin-block-start: 0.3rem !important;
   }
   margin-block-start: 2.3rem;
   align-items: flex-start;
@@ -36,6 +39,7 @@
     height: 37px;
     align-self: flex-start;
     @include breakpoint-down(medium){
+      //align-self: center;
      font-size:1.2rem;
       width: 304px;
       height: 37px;
@@ -51,9 +55,9 @@
     height: 24px;
     align-self: flex-start;
     @include breakpoint-down(medium){
-      margin-inline: 2.125rem;
+      margin-inline: 0.125rem;
       font-size:0.9rem;
-      align-self: center;
+      margin-top: -1rem;
 width:290px;
     }
   }
@@ -86,7 +90,7 @@ h6{
   @include breakpoint-down(medium){
     font-size:0.7rem;
     align-self: center;
-
+    margin-top: -0.9rem;
   }
 }
 }
