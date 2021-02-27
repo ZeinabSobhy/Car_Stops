@@ -73,11 +73,15 @@
         @include breakpoint-down(medium){
           width:10.438rem;
           align-self: center;
+          justify-content: center;
         }
       }
       p{
         @include breakpoint-down(medium){
          text-align:center;
+          align-self: flex-start;
+          justify-content: center;
+
         }
         display: flex;
         align-self: flex-start;
