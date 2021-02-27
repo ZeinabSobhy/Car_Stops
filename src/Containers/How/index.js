@@ -19,7 +19,7 @@ return (
             <ListItem number={1} title={ <FormattedMessage id="howItWorks.firstPoint.title"/>} subtitle={  <FormattedMessage id="howItWorks.firstPoint.subtitle"/>}/>
             <ListItem number={2} title={ <FormattedMessage id="howItWorks.secondPoint.title"/>} subtitle={  <FormattedMessage id="howItWorks.secondPoint.subtitle"/>}/>
             <ListItem number={3} title={ <FormattedMessage id="howItWorks.thirdPoint.title"/>} subtitle={  <FormattedMessage id="howItWorks.thirdPoint.subtitle"/>}
-            style={isSmallScreen && locale=="ar" ? {whiteSpace:'nowrap'} : null }/>
+            style={isSmallScreen && locale=="ar" ? {marginRight:'-2rem'} : null }/>
 
         </div>
     </div>

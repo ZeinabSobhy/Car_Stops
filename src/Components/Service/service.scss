@@ -75,6 +75,9 @@
         }
       }
       p{
+        @include breakpoint-down(medium){
+         text-align:center;
+        }
         margin-top: 1rem;
         width: 180px;
         height: 5.26rem;
@@ -87,7 +90,6 @@
         letter-spacing: normal;
         color: #595f6f;
         align-self: flex-end;
-        text-align: center;
         @include breakpoint-down(medium){
          width:21.375rem;
         }

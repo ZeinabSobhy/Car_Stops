@@ -62,6 +62,9 @@ align-self:center;
       letter-spacing: normal;
       color: #ffffff;
       white-space:nowrap;
+      @include breakpoint-up(large){
+        white-space:unset;
+      }
       @include breakpoint-down(small){
         white-space:unset;
         width:18.75rem;
