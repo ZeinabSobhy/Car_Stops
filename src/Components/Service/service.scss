@@ -56,6 +56,7 @@
         margin-inline-start: 1.8rem;
       }
       h3{
+        display: flex;
         margin-top: 1rem;
         align-self: flex-start;
         width: 11.25rem;
@@ -78,7 +79,9 @@
         @include breakpoint-down(medium){
          text-align:center;
         }
-        margin-top: 1rem;
+        display: flex;
+        align-self: flex-start;
+        margin-top: 0.4rem;
         width: 180px;
         height: 5.26rem;
         font-family: Roboto;
@@ -89,7 +92,6 @@
         line-height: 1.29;
         letter-spacing: normal;
         color: #595f6f;
-        align-self: flex-end;
         @include breakpoint-down(medium){
          width:21.375rem;
         }
