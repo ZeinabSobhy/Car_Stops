@@ -29,6 +29,13 @@ const Form = props => {
         setMakers(keys)
         console.log("Makers",makers)
     },[cars])
+    useEffect(()=> {
+        if ( item && phone && name) {
+            setFormIsValid(true)
+        }else{
+            setFormIsValid(null)
+        }
+    } , [maker , item , phone , name ])
     const sendRequest = (value) =>  handleSent(value);
 
     const errorMessage = msg =>   {
@@ -41,18 +48,17 @@ const Form = props => {
         )
     }
     const handleChangeMaker = (event) =>  {
-        console.log(event , "BluR")
         if(event.type===   "blur") {
-            event.target.value ===   "Acura" ? setFormIsValid(false):setFormIsValid(true)
+            event.target.value ===   "Acura" ? setError({...error , maker:true}):setError({...error , maker:false})
         }
         const make = event.target.value;
-        make ===    null ? setFormIsValid(false):setFormIsValid(true)
+        make ===    null ? setError({...error , maker:true}):setError({...error , maker:false})
         setMaker(make);
     };
     const handleChangeModel = event =>  {
         const model_item = event.target.value;
         setItem(model_item);
-        !model_item ? setFormIsValid(false):setFormIsValid(true)
+        !model_item ? setError({...error , model:true}):setError({...error , model:false})
         console.log("ITEM",item)
     };
     useEffect(()=> {
@@ -62,9 +68,10 @@ const Form = props => {
     },[maker]);
     const handleSubmit = (event) =>  {
         event.preventDefault();
-        if(setFormIsValid && !error.fullName && !error.phone) {
+        if(formIsValid && !error.fullName && !error.phone) {
             handlePostRequest({Make:maker , Model:item , PhoneNumber:phone, FullName:name})
-            console.log("FORM" , [phone,item, maker , name]);
+        }else {
+            setFormIsValid(false);
         }
     };
     const handlePostRequest = (body) => {
@@ -105,9 +112,9 @@ const Form = props => {
 return(
     <div className="form_div">
         <form autoComplete={false} onSubmit={(event)=> {handleSubmit(event)}}>
-            {formIsValid==null ? null :  <div className="error_div">
-                <p className="error_div_msg">
-                    <FormattedMessage id="validation.allFields" />
+            {formIsValid==null || formIsValid==true ? null :  <div className="error_div" style={{justifyContent:'flex-start'}}>
+                <p className="error_div_msg" style={{ marginInline:'1rem'}}>
+                    <FormattedMessage id="validation.allFields"  />
                 </p>
             </div>}
            <h4> <FormattedMessage id="startToday.formSection.headline" /></h4>
@@ -115,7 +122,7 @@ return(
                 <label className="form_div_label" >
                     <FormattedMessage id="startToday.formSection.firstLabel" />
                 </label>
-                <select  style={error.maker ? { border: 'solid 1px #ec1c24', backgroundColor: 'rgba(236, 28, 36, 0.04)'}:null}
+                <select  style={error.maker || formIsValid == false ? { border: 'solid 1px #ec1c24', backgroundColor: 'rgba(236, 28, 36, 0.04)'}:null}
                          className={locale == "en" ? "form_div_ele form_div_selectEn" : "form_div_ele form_div_selectAr"} value={maker} name={"car_make"} onBlur={(event) =>  {handleChangeMaker(event)}}  id={"car_make"} onChange={(event)=> {handleChangeMaker(event)}}>
                     <option value="" disabled selected>
                         {locale == "en" ? "SELECT A MAKER" : "إختار صانع"}
@@ -133,7 +140,7 @@ return(
                 <label  className="form_div_label" for={"car_model"}>
                     <FormattedMessage id="startToday.formSection.secondLabel" />
                 </label>
-                <select style={error.model ? { border: 'solid 1px #ec1c24',
+                <select style={error.model || formIsValid == false  ? { border: 'solid 1px #ec1c24',
                     backgroundColor: 'rgba(236, 28, 36, 0.04)'}:null }  className={locale == "en" ? "form_div_ele form_div_selectEn" : "form_div_ele form_div_selectAr"}  id={"car_model"} value={item} onChange={(event)=> {handleChangeModel(event)}}>
                     <option value="" disabled selected>
                         {locale == "en" ? "SELECT A MODEL" : "إختار طراز"}
@@ -152,7 +159,7 @@ return(
                 <label className="form_div_label" htmlFor={"car_model"}>
                     <FormattedMessage id="startToday.formSection.thirdLabel" />
                 </label>
-                <input value={name} type="text" name="full_name" style={error.fullName ? { border: 'solid 1px #ec1c24',
+                <input value={name} type="text" name="full_name" style={error.fullName || formIsValid==false  ? { border: 'solid 1px #ec1c24',
                     backgroundColor: 'rgba(236, 28, 36, 0.04)'}:null  }  className="form_div_ele" id="full_name" onChange={(e)=>{handleChangeFullName(e)}} onBlur={(e)=>{handleChangeFullName(e)}} />
                 {error.fullName ? errorMessage(<FormattedMessage id="validation.name" />):null}
             </FormControl>
@@ -160,7 +167,7 @@ return(
                 <label className="form_div_label" htmlFor={"phone"}>
                     <FormattedMessage id="startToday.formSection.fourthLabel" />
                 </label>
-                <input value={phone} type="number" name="phone" style={error.phone ? { border: 'solid 1px #ec1c24',
+                <input value={phone} type="number" name="phone" style={error.phone || formIsValid == false  ? { border: 'solid 1px #ec1c24',
                     backgroundColor: 'rgba(236, 28, 36, 0.04)'}:null  }  className="form_div_ele" id="phone" onChange={(e)=>{handleChangePhone(e)}} onBlur={(e)=>{handleChangePhone(e)}} />
                 {error.phone ? errorMessage(<FormattedMessage id="validation.phone" />):null}
             </FormControl>

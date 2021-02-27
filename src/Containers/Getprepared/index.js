@@ -1,10 +1,11 @@
 import React from "react";
-import {FormattedMessage} from "react-intl";
+import {FormattedMessage, useIntl} from "react-intl";
 import './getprepared.scss';
 
 
 
 const GetPrepared = props =>   {
+    const locale = useIntl().locale;
 
     return (
         <section className="prepared">
@@ -16,7 +17,7 @@ const GetPrepared = props =>   {
                 <div className="prepared_container_grid">
                     <div className="prepared_container_grid_item">
                       <ul>
-                          <li><p><FormattedMessage id="prepared.rules.first" /></p></li>
+                          <li><p style={locale == "ar" ? {marginRight:'1rem'} : null}><FormattedMessage id="prepared.rules.first" /></p></li>
                           <li><p><FormattedMessage id="prepared.rules.second" /></p></li>
                           <li><p><FormattedMessage id="prepared.rules.third" /></p></li>
                           <li><p><FormattedMessage id="prepared.rules.fourth" /></p></li>
@@ -28,7 +29,7 @@ const GetPrepared = props =>   {
                           <li><p><FormattedMessage id="prepared.rules.fifth" /></p></li>
                           <li><p><FormattedMessage id="prepared.rules.sixth" /></p></li>
                           <li><p><FormattedMessage id="prepared.rules.seventh" /></p></li>
-                          <li><p><FormattedMessage id="prepared.rules.eight" /></p></li>
+                          <li><p  style={locale == "ar" ? {marginRight:'1rem'} : null}><FormattedMessage id="prepared.rules.eight" /></p></li>
                       </ul>
                     </div>
                 </div>

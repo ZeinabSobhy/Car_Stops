@@ -22,8 +22,8 @@
     height:11vh;
     margin-top: 2rem;
     @include breakpoint-up(large){
+      margin-block-start: -7rem;
       margin-inline-start: 35rem;
-      margin-block-start: -12rem;
 
     }
     h4{
