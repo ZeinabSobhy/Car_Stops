@@ -15,8 +15,13 @@
   margin: 0 auto;
   padding: 0;
   @include breakpoint-down(medium){
-    height: 820vh;
+    height: 830vh;
   }
+  @include breakpoint-down(small){
+    height: 808vh !important;
+  }
+
+
 
 
 }

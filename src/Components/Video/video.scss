@@ -101,6 +101,13 @@ h6{
   border-radius: 4.188rem;
   box-shadow: 1.25rem 1.25rem 1.25rem 0 rgba(0, 0, 0, 0.4);
   background-color: #ec1c24;
+  @include breakpoint-down(medium){
+
+    width: 29px !important;
+    height: 28px !important;
+    transform: translate(-30%, -183%) !important;
+  }
+
 }
 .video_sara{
   order: 1;
