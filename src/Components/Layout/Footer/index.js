@@ -12,7 +12,7 @@ const Footer = props =>  {
     return (
        <footer className="footer">
                    <div className="footer_logo_footer">
-                          <img src={Logo}/>
+                          {/* <img src={Logo}/> */}
                           <p> <FormattedMessage id="footer.subtitle" /></p>
                    </div>
              <div className="footer_social-icons">

@@ -8,9 +8,9 @@ const Header = props => {
     return (
         <header>
            <div className="header_container">
-             <div className="header_logo">
+             {/* <div className="header_logo">
                  <img src={Logo}/>
-             </div>
+             </div> */}
                 <button onClick={() =>  locale ===  'en' ? setLocale('ar') : setLocale('en')} className="header_btn"> <p> <FormattedMessage id="header.btn"/></p> </button>
            </div>
         </header>
